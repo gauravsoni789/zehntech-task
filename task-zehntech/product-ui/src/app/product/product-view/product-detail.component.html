@@ -1,0 +1,27 @@
+<div class="conatiner m-3">
+  <div class="row">
+    <div class="col-12 my-2">
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button class="btn btn-secondary" type="button" (click)="logout()">Logout</button>
+      </div>
+      <h1 class="title text-center">Product detail</h1>
+    </div>
+    <ng-container *ngIf="product">
+      <div class="col-4">
+        <img 
+          [src]="product?.imageUrl || '../../../assets/images/dummy-product.png'"
+          class="card-img-top"
+        />
+      </div>
+      <div class="col">
+        <p class="fw-bold">Category: {{product?.categoryName || 'N/A'}}</p>
+        <p class="fw-bold">Product Name: {{product?.name || 'N/A'}}</p>
+        <p class="fw-bold">Product Description: {{product?.description || 'N/A'}}</p>
+      </div>
+      <div class="mt-2 col-12">
+        <button class="btn text-muted"
+          (click)="navigateToCategory(product)">Back</button>
+      </div>
+    </ng-container>
+  </div>
+</div>
